@@ -1,0 +1,8 @@
+syntax: glob
+.DS_Store
+*.pyc
+*.orig
+*.log
+test_db
+*.tar.gz
+.idea
