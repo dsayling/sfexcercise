@@ -1,4 +1,9 @@
-#Usage
+## SF Interview Assignment
+
+Request from SF was to build a client-server model app. The client measures "disk performance" and then reports that back to the central server. 
+Heartbeats for the clients are sent over mulitcast UDP since I loved using it from my prior job. See [the Requirements](#requirements)
+
+## Usage
 
 Writes all incoming reports from clients to a 'database'.
 Logs incoming reports, heartbeats, performance stats, client connection
@@ -74,22 +79,23 @@ optional arguments:
                         False)
 ```
 
-#Requirements
-##Story
+# Requirements
+
+## Story
 The customer wants to compare the performance of various storage solutions on their network. You are
 tasked with creating a distributed storage benchmark tool consisting of two parts, a client and a server. The
 client program measures the performance of locally mounted disks and submits the the results back to the
 server. The server will maintain a central database of benchmark runs. 
 
 
-##Master/Server Requirements:
+## Master/Server Requirements:
 
 * Needs to handle concurrent client connections.
 	* Writes client performance data to database. Database choice is up to you.
 	*￼Logs client "heartbeat" status and other messages to log file.
 	*￼When all clients have finished, writes out a report with some general usage, if a client went away, perf stats, etc. then exits.
 
-##Client Requirements:
+## Client Requirements:
 
 * Minimum of 3 clients running at the same time - they can all be running locally.
 * Each client should run for a configurable length of time and then shut itself down.
